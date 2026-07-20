@@ -2,9 +2,11 @@ import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/auth'
 import { prisma } from '@/lib/prisma'
 import Link from 'next/link'
-import type { Hostel, Campus } from '@prisma/client'
+import type { Prisma } from '@prisma/client'
 
-type HostelRow = Hostel & { campus: Campus; _count: { rooms: number; reviews: number } }
+type HostelRow = Prisma.HostelGetPayload<{
+  include: { campus: true; _count: { select: { rooms: true; reviews: true } } }
+}>
 
 export default async function ListingsPage() {
   const session = await getServerSession(authOptions)

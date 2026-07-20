@@ -1,10 +1,9 @@
 import { prisma } from '@/lib/prisma'
-import type { Hostel, Campus, User } from '@prisma/client'
+import type { Prisma } from '@prisma/client'
 
-type HostelRow = Hostel & {
-  owner: Pick<User, 'name' | 'email'>
-  campus: Campus
-}
+type HostelRow = Prisma.HostelGetPayload<{
+  include: { owner: { select: { name: true; email: true } }; campus: true }
+}>
 
 export default async function AdminListingsPage() {
   const hostels = await prisma.hostel.findMany({

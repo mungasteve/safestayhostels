@@ -2,7 +2,7 @@ import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import BookingForm from '@/components/booking-form'
 import { prisma } from '@/lib/prisma'
-import type { HostelImage, Room, Review } from '@prisma/client'
+import type { Prisma } from '@prisma/client'
 
 export default async function HostelDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params
@@ -27,7 +27,7 @@ export default async function HostelDetailPage({ params }: { params: Promise<{ i
   return (
     <div className="max-w-4xl mx-auto px-4 py-8 space-y-8">
       <div className="grid grid-cols-2 gap-2 rounded-xl overflow-hidden h-72">
-        {hostel.images.slice(0, 4).map((img: HostelImage) => (
+        {hostel.images.slice(0, 4).map((img) => (
           <div key={img.id} className="relative bg-gray-100">
             <Image src={img.url} alt={hostel.name} fill className="object-cover" />
           </div>
@@ -48,7 +48,7 @@ export default async function HostelDetailPage({ params }: { params: Promise<{ i
       <div>
         <h2 className="text-xl font-semibold mb-3">Available rooms</h2>
         <div className="space-y-3">
-          {hostel.rooms.map((room: Room) => (
+          {hostel.rooms.map((room) => (
             <div key={room.id} className="border rounded-lg p-4 flex justify-between items-center">
               <div>
                 <p className="font-medium">{room.type}</p>
@@ -71,7 +71,7 @@ export default async function HostelDetailPage({ params }: { params: Promise<{ i
         <div>
           <h2 className="text-xl font-semibold mb-3">Reviews</h2>
           <div className="space-y-3">
-            {hostel.reviews.map((review: Review & { student: { name: string } }) => (
+            {hostel.reviews.map((review) => (
               <div key={review.id} className="border rounded-lg p-4">
                 <div className="flex justify-between">
                   <span className="font-medium">{review.student?.name}</span>

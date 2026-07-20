@@ -1,13 +1,15 @@
-import type { Hostel, Room, User, Campus, HostelImage, Review } from '@prisma/client'
+import type { Prisma } from '@prisma/client'
 
-export type HostelWithDetails = Hostel & {
-  owner: Pick<User, 'id' | 'name' | 'avatarUrl'>
-  campus: Campus
-  images: HostelImage[]
-  rooms: Pick<Room, 'id' | 'type' | 'pricePerMonth' | 'availableUnits'>[]
-  reviews: Pick<Review, 'id' | 'rating' | 'comment'>[]
-  _count?: { favorites: number }
-}
+export type HostelWithDetails = Prisma.HostelGetPayload<{
+  include: {
+    owner: { select: { id: true; name: true; avatarUrl: true } }
+    campus: true
+    images: true
+    rooms: { select: { id: true; type: true; pricePerMonth: true; availableUnits: true } }
+    reviews: { select: { id: true; rating: true; comment: true } }
+    _count: { select: { favorites: true } }
+  }
+}>
 
 export type HostelFilters = {
   campusId?: string

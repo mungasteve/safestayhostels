@@ -1,12 +1,14 @@
 import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/auth'
 import { prisma } from '@/lib/prisma'
-import type { Booking, Room, Hostel } from '@prisma/client'
+import type { Prisma } from '@prisma/client'
 
-type BookingRow = Booking & {
-  student: { name: string; email: string }
-  room: Room & { hostel: Pick<Hostel, 'name'> }
-}
+type BookingRow = Prisma.BookingGetPayload<{
+  include: {
+    student: { select: { name: true; email: true } }
+    room: { include: { hostel: { select: { name: true } } } }
+  }
+}>
 
 export default async function DashboardBookingsPage() {
   const session = await getServerSession(authOptions)

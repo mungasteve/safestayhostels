@@ -4,7 +4,6 @@ import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { MapPin, Star } from 'lucide-react'
 import type { HostelWithDetails } from '@/types'
-import type { HostelImage, Review } from '@prisma/client'
 
 const genderColor: Record<string, string> = {
   MALE: 'bg-blue-100 text-blue-700',
@@ -13,12 +12,12 @@ const genderColor: Record<string, string> = {
 }
 
 export default function HostelCard({ hostel }: { hostel: HostelWithDetails }) {
-  const cover = hostel.images.find((i: HostelImage) => i.isCover) ?? hostel.images[0]
+  const cover = hostel.images.find((i) => i.isCover) ?? hostel.images[0]
   const minPrice = hostel.rooms.length
     ? Math.min(...hostel.rooms.map((r) => r.pricePerMonth))
     : null
   const avgRating = hostel.reviews.length
-    ? (hostel.reviews.reduce((s: number, r: Pick<Review, 'id' | 'rating' | 'comment'>) => s + r.rating, 0) / hostel.reviews.length).toFixed(1)
+    ? (hostel.reviews.reduce((s: number, r) => s + r.rating, 0) / hostel.reviews.length).toFixed(1)
     : null
 
   return (
