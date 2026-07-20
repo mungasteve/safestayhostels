@@ -1,0 +1,167 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum Role {
+  STUDENT
+  OWNER
+  ADMIN
+}
+
+enum Gender {
+  MALE
+  FEMALE
+  MIXED
+}
+
+enum HostelStatus {
+  DRAFT
+  PENDING
+  LIVE
+  SUSPENDED
+}
+
+enum RoomType {
+  SINGLE
+  SHARED
+  BEDSITTER
+  EN_SUITE
+}
+
+enum BookingStatus {
+  PENDING
+  CONFIRMED
+  CANCELLED
+  COMPLETED
+}
+
+enum PaymentProvider {
+  STRIPE
+  MPESA
+}
+
+enum PaymentStatus {
+  INITIATED
+  SUCCESS
+  FAILED
+  REFUNDED
+}
+
+model User {
+  id           String     @id @default(cuid())
+  name         String
+  email        String     @unique
+  phone        String?
+  passwordHash String?
+  role         Role       @default(STUDENT)
+  avatarUrl    String?
+  hostels      Hostel[]
+  bookings     Booking[]
+  reviews      Review[]
+  favorites    Favorite[]
+  createdAt    DateTime   @default(now())
+}
+
+model Campus {
+  id        String   @id @default(cuid())
+  name      String
+  city      String
+  latitude  Float
+  longitude Float
+  hostels   Hostel[]
+}
+
+model Hostel {
+  id          String        @id @default(cuid())
+  owner       User          @relation(fields: [ownerId], references: [id])
+  ownerId     String
+  campus      Campus        @relation(fields: [campusId], references: [id])
+  campusId    String
+  name        String
+  description String
+  address     String
+  latitude    Float
+  longitude   Float
+  gender      Gender
+  amenities   String[]
+  verified    Boolean       @default(false)
+  status      HostelStatus  @default(DRAFT)
+  images      HostelImage[]
+  rooms       Room[]
+  reviews     Review[]
+  favorites   Favorite[]
+  createdAt   DateTime      @default(now())
+}
+
+model HostelImage {
+  id       String  @id @default(cuid())
+  hostel   Hostel  @relation(fields: [hostelId], references: [id])
+  hostelId String
+  url      String
+  isCover  Boolean @default(false)
+}
+
+model Room {
+  id             String    @id @default(cuid())
+  hostel         Hostel    @relation(fields: [hostelId], references: [id])
+  hostelId       String
+  type           RoomType
+  pricePerTerm   Float
+  pricePerMonth  Float
+  capacity       Int
+  availableUnits Int
+  bookings       Booking[]
+}
+
+model Booking {
+  id         String        @id @default(cuid())
+  student    User          @relation(fields: [studentId], references: [id])
+  studentId  String
+  room       Room          @relation(fields: [roomId], references: [id])
+  roomId     String
+  moveInDate DateTime
+  status     BookingStatus @default(PENDING)
+  amountDue  Float
+  amountPaid Float         @default(0)
+  payments   Payment[]
+  review     Review?
+  createdAt  DateTime      @default(now())
+}
+
+model Payment {
+  id             String          @id @default(cuid())
+  booking        Booking         @relation(fields: [bookingId], references: [id])
+  bookingId      String
+  provider       PaymentProvider
+  amount         Float
+  status         PaymentStatus   @default(INITIATED)
+  transactionRef String          @unique
+  createdAt      DateTime        @default(now())
+}
+
+model Review {
+  id        String   @id @default(cuid())
+  hostel    Hostel   @relation(fields: [hostelId], references: [id])
+  hostelId  String
+  student   User     @relation(fields: [studentId], references: [id])
+  studentId String
+  booking   Booking  @relation(fields: [bookingId], references: [id])
+  bookingId String   @unique
+  rating    Int
+  comment   String
+  createdAt DateTime @default(now())
+}
+
+model Favorite {
+  id        String @id @default(cuid())
+  student   User   @relation(fields: [studentId], references: [id])
+  studentId String
+  hostel    Hostel @relation(fields: [hostelId], references: [id])
+  hostelId  String
+
+  @@unique([studentId, hostelId])
+}
