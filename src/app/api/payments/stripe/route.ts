@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { getServerSession } from 'next-auth'
 import { z } from 'zod'
 import { authOptions } from '@/lib/auth'
-import { stripe } from '@/lib/stripe'
+import { getStripe } from '@/lib/stripe'
 import { prisma } from '@/lib/prisma'
 
 const schema = z.object({ bookingId: z.string().cuid() })
@@ -22,7 +22,7 @@ export async function POST(req: NextRequest) {
   if (!booking) return NextResponse.json({ error: 'Booking not found' }, { status: 404 })
   if (booking.studentId !== studentId) return NextResponse.json({ error: 'Forbidden' }, { status: 403 })
 
-  const intent = await stripe.paymentIntents.create({
+  const intent = await getStripe().paymentIntents.create({
     amount: Math.round(booking.amountDue * 100),
     currency: 'kes',
     metadata: { bookingId },
