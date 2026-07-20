@@ -63,16 +63,15 @@ export default async function HostelsPage({
   const hostels = await getHostels(params)
 
   return (
-    <div className="min-h-screen" style={{ background: 'var(--sand)' }}>
-      {/* Page header */}
-      <div className="bg-[#132339]">
-        <div className="max-w-7xl mx-auto px-4 py-10">
-          <h1 className="text-3xl font-bold text-white mb-1">Find a hostel</h1>
-          <p className="text-white/60 text-sm">Browse verified student accommodation near your campus</p>
+    <div className="min-h-screen bg-gray-50">
+      <div className="bg-white border-b border-gray-200">
+        <div className="max-w-6xl mx-auto px-6 py-8">
+          <h1 className="text-2xl font-bold text-gray-900">Find a hostel</h1>
+          <p className="text-gray-500 text-sm mt-1">Browse verified student accommodation near your campus</p>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 py-6 space-y-6">
+      <div className="max-w-6xl mx-auto px-6 py-6 space-y-5">
         <Suspense>
           <FilterBar />
         </Suspense>
