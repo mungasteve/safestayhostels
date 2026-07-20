@@ -62,12 +62,12 @@ export default async function HostelsPage({
   const hostels = await getHostels(params)
 
   return (
-    <div className="min-h-screen bg-muted/30">
+    <div className="min-h-screen" style={{ background: 'var(--sand)' }}>
       {/* Page header */}
-      <div className="bg-background border-b">
-        <div className="max-w-7xl mx-auto px-4 py-8">
-          <h1 className="text-3xl font-bold mb-1">Find a hostel</h1>
-          <p className="text-muted-foreground">Browse verified student accommodation near your campus</p>
+      <div className="bg-[#132339]">
+        <div className="max-w-7xl mx-auto px-4 py-10">
+          <h1 className="text-3xl font-bold text-white mb-1">Find a hostel</h1>
+          <p className="text-white/60 text-sm">Browse verified student accommodation near your campus</p>
         </div>
       </div>
 

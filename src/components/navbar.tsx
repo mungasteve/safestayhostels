@@ -27,7 +27,7 @@ export default function Navbar() {
     href === '/' ? pathname === '/' : pathname.startsWith(href.split('#')[0]) && href.split('#')[0] !== '/'
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-slate-100 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80">
+    <header className="sticky top-0 z-50 w-full border-b border-[#DDD8CC] bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80">
       <div className="max-w-7xl mx-auto px-6 flex h-15 items-center justify-between gap-8">
 
         {/* Logo */}
@@ -44,8 +44,8 @@ export default function Navbar() {
               className={cn(
                 'px-3.5 py-2 rounded-lg text-sm transition-colors',
                 isActive(href)
-                  ? 'text-slate-900 font-semibold bg-slate-100'
-                  : 'text-slate-500 font-medium hover:text-slate-900 hover:bg-slate-50'
+                  ? 'text-[#132339] font-semibold bg-[#EDE8DC]'
+                  : 'text-[#6B6251] font-medium hover:text-[#132339] hover:bg-[#F7F3EA]'
               )}
             >
               {label}
@@ -57,8 +57,8 @@ export default function Navbar() {
               className={cn(
                 'px-3.5 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-1.5',
                 pathname.startsWith('/dashboard')
-                  ? 'text-slate-900 font-semibold bg-slate-100'
-                  : 'text-slate-500 hover:text-slate-900 hover:bg-slate-50'
+                  ? 'text-[#132339] font-semibold bg-[#EDE8DC]'
+                  : 'text-[#6B6251] hover:text-[#132339] hover:bg-[#F7F3EA]'
               )}
             >
               <LayoutDashboard className="w-3.5 h-3.5" /> Dashboard
@@ -70,8 +70,8 @@ export default function Navbar() {
               className={cn(
                 'px-3.5 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-1.5',
                 pathname.startsWith('/admin')
-                  ? 'text-slate-900 font-semibold bg-slate-100'
-                  : 'text-slate-500 hover:text-slate-900 hover:bg-slate-50'
+                  ? 'text-[#132339] font-semibold bg-[#EDE8DC]'
+                  : 'text-[#6B6251] hover:text-[#132339] hover:bg-[#F7F3EA]'
               )}
             >
               <ShieldCheck className="w-3.5 h-3.5" /> Admin
@@ -96,7 +96,7 @@ export default function Navbar() {
               </Link>
               <Link
                 href="/register"
-                className="px-4 py-2 rounded-lg text-sm font-semibold bg-primary text-white hover:bg-primary/90 transition-colors"
+                className="px-4 py-2 rounded-lg text-sm font-semibold bg-[#132339] text-white hover:bg-[#1a2f4a] transition-colors"
               >
                 Register
               </Link>

@@ -7,9 +7,9 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-sans);
-  --font-mono: var(--font-geist-mono);
-  --font-heading: var(--font-sans);
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-fraunces), Georgia, serif;
+  --font-mono: ui-monospace, monospace;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -18,11 +18,6 @@
   --color-sidebar-primary: var(--sidebar-primary);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar: var(--sidebar);
-  --color-chart-5: var(--chart-5);
-  --color-chart-4: var(--chart-4);
-  --color-chart-3: var(--chart-3);
-  --color-chart-2: var(--chart-2);
-  --color-chart-1: var(--chart-1);
   --color-ring: var(--ring);
   --color-input: var(--input);
   --color-border: var(--border);
@@ -49,72 +44,39 @@
 }
 
 :root {
-  --background: oklch(0.99 0 0);
-  --foreground: oklch(0.13 0.02 255);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.13 0.02 255);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.13 0.02 255);
-  --primary: oklch(0.55 0.22 262);
-  --primary-foreground: oklch(1 0 0);
-  --secondary: oklch(0.96 0.01 262);
-  --secondary-foreground: oklch(0.35 0.1 262);
-  --muted: oklch(0.96 0.005 262);
-  --muted-foreground: oklch(0.52 0.04 262);
-  --accent: oklch(0.94 0.03 262);
-  --accent-foreground: oklch(0.35 0.1 262);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.91 0.01 262);
-  --input: oklch(0.91 0.01 262);
-  --ring: oklch(0.55 0.22 262);
-  --chart-1: oklch(0.55 0.22 262);
-  --chart-2: oklch(0.65 0.18 220);
-  --chart-3: oklch(0.72 0.14 180);
-  --chart-4: oklch(0.75 0.16 140);
-  --chart-5: oklch(0.68 0.2 30);
-  --radius: 0.75rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.13 0.02 255);
-  --sidebar-primary: oklch(0.55 0.22 262);
-  --sidebar-primary-foreground: oklch(1 0 0);
-  --sidebar-accent: oklch(0.96 0.01 262);
-  --sidebar-accent-foreground: oklch(0.35 0.1 262);
-  --sidebar-border: oklch(0.91 0.01 262);
-  --sidebar-ring: oklch(0.55 0.22 262);
-}
+  /* SafeStay brand palette */
+  --navy:  #132339;
+  --sand:  #F7F3EA;
+  --amber: #C99A43;
+  --sage:  #4C7A6B;
 
-.dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  --background: var(--sand);
+  --foreground: var(--navy);
+  --card: #FFFFFF;
+  --card-foreground: var(--navy);
+  --popover: #FFFFFF;
+  --popover-foreground: var(--navy);
+  --primary: var(--navy);
+  --primary-foreground: #FFFFFF;
+  --secondary: #EDE8DC;
+  --secondary-foreground: var(--navy);
+  --muted: #EDE8DC;
+  --muted-foreground: #6B6251;
+  --accent: var(--amber);
+  --accent-foreground: #FFFFFF;
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: #DDD8CC;
+  --input: #DDD8CC;
+  --ring: var(--amber);
+  --radius: 0.75rem;
+  --sidebar: #FFFFFF;
+  --sidebar-foreground: var(--navy);
+  --sidebar-primary: var(--navy);
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: var(--sand);
+  --sidebar-accent-foreground: var(--navy);
+  --sidebar-border: #DDD8CC;
+  --sidebar-ring: var(--amber);
 }
 
 @layer base {
@@ -124,7 +86,7 @@
   body {
     @apply bg-background text-foreground;
   }
-  html {
-    @apply font-sans;
+  h1, h2, h3 {
+    font-family: var(--font-fraunces), Georgia, serif;
   }
 }
