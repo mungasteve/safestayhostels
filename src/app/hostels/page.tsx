@@ -30,6 +30,7 @@ async function getHostels(params: Record<string, string>): Promise<HostelWithDet
   return prisma.hostel.findMany({
     where,
     include: {
+      owner: { select: { id: true, name: true, avatarUrl: true } },
       campus: true,
       images: { where: { isCover: true }, take: 1 },
       rooms: { select: { id: true, type: true, pricePerMonth: true, availableUnits: true } },
