@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import Image from 'next/image'
 import { redirect } from 'next/navigation'
 import { ArrowRight, Mail, Phone, Star, Search } from 'lucide-react'
 
@@ -36,9 +35,10 @@ export default function HomePage() {
     <div className="flex flex-col bg-white text-gray-900">
 
       {/* HERO */}
-      <section className="relative h-[85vh] min-h-[560px] flex items-end overflow-hidden">
-        <Image src="/hero-bg.jpg" alt="Student hostel" fill priority className="object-cover object-center" />
-        <div className="absolute inset-0 bg-gradient-to-t from-gray-950/80 via-gray-950/30 to-transparent" />
+      <section className="relative h-[80vh] min-h-[520px] flex items-end overflow-hidden bg-gray-900">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/hero-bg.jpg" alt="" className="absolute inset-0 w-full h-full object-cover object-center" />
+        <div className="absolute inset-0 bg-gradient-to-t from-gray-950/85 via-gray-950/30 to-transparent" />
         <div className="relative z-10 max-w-6xl mx-auto px-6 pb-16 w-full">
           <div className="max-w-xl space-y-5">
             <h1 className="text-4xl md:text-[2.75rem] font-bold text-white leading-[1.15] tracking-tight">
@@ -81,7 +81,7 @@ export default function HomePage() {
       </section>
 
       {/* ROOM TYPES */}
-      <section className="max-w-6xl mx-auto px-6 py-20">
+      <section className="max-w-6xl mx-auto px-6 py-12">
         <h2 className="text-xl font-semibold text-gray-900 mb-6">Room types</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
           {rooms.map(({ img, type, price }) => (
@@ -102,7 +102,7 @@ export default function HomePage() {
 
       {/* ABOUT */}
       <section id="about" className="border-t border-gray-100 scroll-mt-16">
-        <div className="max-w-6xl mx-auto px-6 py-20">
+        <div className="max-w-6xl mx-auto px-6 py-12">
           <div className="max-w-2xl space-y-5">
             <h2 className="text-2xl font-bold text-gray-900">Why SafeStay</h2>
             <p className="text-gray-500 leading-relaxed">
@@ -131,7 +131,7 @@ export default function HomePage() {
 
       {/* HOW IT WORKS */}
       <section id="how-it-works" className="bg-gray-50 border-y border-gray-100 scroll-mt-16">
-        <div className="max-w-6xl mx-auto px-6 py-20">
+        <div className="max-w-6xl mx-auto px-6 py-12">
           <h2 className="text-2xl font-bold text-gray-900 mb-12">How it works</h2>
           <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-8">
             {[
@@ -151,8 +151,8 @@ export default function HomePage() {
       </section>
 
       {/* TESTIMONIALS */}
-      <section className="max-w-6xl mx-auto px-6 py-20">
-        <div className="flex items-baseline justify-between mb-10">
+      <section className="max-w-6xl mx-auto px-6 py-12">
+        <div className="flex items-baseline justify-between mb-8">
           <h2 className="text-2xl font-bold text-gray-900">What students say</h2>
           <p className="text-xs text-gray-400">Early access users</p>
         </div>
@@ -179,7 +179,7 @@ export default function HomePage() {
 
       {/* CTA */}
       <section className="border-t border-gray-100">
-        <div className="max-w-6xl mx-auto px-6 py-20 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <div className="max-w-6xl mx-auto px-6 py-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div>
             <h2 className="text-2xl font-bold text-gray-900">Find your room</h2>
             <p className="text-gray-500 text-sm mt-1">Browse verified hostels near your campus.</p>
@@ -192,7 +192,7 @@ export default function HomePage() {
 
       {/* CONTACT */}
       <section id="contact" className="bg-gray-50 border-t border-gray-100 scroll-mt-16">
-        <div className="max-w-6xl mx-auto px-6 py-20">
+        <div className="max-w-6xl mx-auto px-6 py-12">
           <h2 className="text-2xl font-bold text-gray-900 mb-2">Get in touch</h2>
           <p className="text-gray-500 text-sm mb-8">Questions about a listing or booking? We respond within a few hours.</p>
           <div className="flex flex-col sm:flex-row gap-3 max-w-md">
