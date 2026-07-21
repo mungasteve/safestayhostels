@@ -86,32 +86,32 @@ export default function HomePage() {
       </section>
 
       {/* ── ROOM TYPES ───────────────────────────────────────────── */}
-      <section className="max-w-6xl mx-auto px-6 py-14">
-        <div className="flex items-baseline justify-between mb-6">
-          <h2 className="text-lg font-semibold text-gray-900">Room types</h2>
-          <Link href="/hostels" className="text-sm text-gray-500 hover:text-gray-900 transition-colors">
-            View all →
-          </Link>
-        </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-          {rooms.map(({ img, type, price }) => (
-            <Link href="/hostels" key={type} className="group block rounded-xl overflow-hidden border border-gray-200 hover:shadow-md transition-shadow">
-              <div className="relative h-36 sm:h-44 overflow-hidden bg-gray-100">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={img} alt={type} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%)' }} />
-                <div className="absolute bottom-0 left-0 p-3 text-white">
-                  <p className="font-semibold text-sm leading-tight">{type}</p>
-                  <p className="text-xs text-white/60 mt-0.5">{price}</p>
+      <section className="bg-white">
+        <div className="max-w-6xl mx-auto px-6 py-14">
+          <div className="flex items-baseline justify-between mb-6">
+            <h2 className="text-lg font-semibold text-gray-900">Room types</h2>
+            <Link href="/hostels" className="text-sm text-gray-400 hover:text-gray-900 transition-colors">View all →</Link>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+            {rooms.map(({ img, type, price }) => (
+              <Link href="/hostels" key={type} className="group block rounded-xl overflow-hidden border border-gray-200 hover:shadow-md transition-shadow">
+                <div className="relative h-36 sm:h-44 overflow-hidden bg-gray-100">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={img} alt={type} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%)' }} />
+                  <div className="absolute bottom-0 left-0 p-3 text-white">
+                    <p className="font-semibold text-sm leading-tight">{type}</p>
+                    <p className="text-xs text-white/60 mt-0.5">{price}</p>
+                  </div>
                 </div>
-              </div>
-            </Link>
-          ))}
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* ── WHY SAFESTAY ─────────────────────────────────────────── */}
-      <section id="about" className="border-t border-gray-100 scroll-mt-16">
+      <section id="about" className="bg-gray-50 scroll-mt-16">
         <div className="max-w-6xl mx-auto px-6 py-14">
           <div className="grid md:grid-cols-2 gap-12 items-start">
             <div>
@@ -119,19 +119,22 @@ export default function HomePage() {
               <p className="text-gray-500 text-sm leading-relaxed mb-3">
                 Finding student housing in Kenya was broken — Facebook groups full of scams, agents demanding cash upfront, photos that looked nothing like the actual room.
               </p>
-              <p className="text-gray-500 text-sm leading-relaxed">
+              <p className="text-gray-500 text-sm leading-relaxed mb-6">
                 Every listing on SafeStay is physically inspected before it goes live. Every payment is held in escrow until you confirm move-in. Every review is from a student who actually lived there.
               </p>
+              <Link href="/hostels" className="inline-flex items-center gap-2 bg-gray-900 text-white hover:bg-gray-800 px-4 py-2 rounded-lg text-sm font-semibold transition-colors">
+                Browse hostels <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
             </div>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-3">
               {[
                 { icon: ShieldCheck, title: 'Verified listings', desc: 'Physically inspected before going live. No ghost listings.' },
                 { icon: MapPin, title: 'Campus-first', desc: 'Filter by university. Walk time shown on every listing.' },
                 { icon: CreditCard, title: 'Secure payments', desc: 'M-Pesa or card. Escrow until you confirm move-in.' },
                 { icon: Star, title: 'Honest reviews', desc: 'Only from students who completed a booking.' },
               ].map(({ icon: Icon, title, desc }) => (
-                <div key={title} className="p-4 rounded-xl border border-gray-200 bg-gray-50">
-                  <Icon className="w-4 h-4 text-gray-700 mb-2" strokeWidth={1.5} />
+                <div key={title} className="p-4 rounded-xl border border-gray-200 bg-white">
+                  <Icon className="w-4 h-4 text-gray-600 mb-2.5" strokeWidth={1.5} />
                   <p className="font-semibold text-sm text-gray-900 mb-1">{title}</p>
                   <p className="text-xs text-gray-500 leading-relaxed">{desc}</p>
                 </div>
@@ -142,18 +145,18 @@ export default function HomePage() {
       </section>
 
       {/* ── HOW IT WORKS ─────────────────────────────────────────── */}
-      <section id="how-it-works" className="border-t border-gray-100 scroll-mt-16">
+      <section id="how-it-works" className="bg-white scroll-mt-16">
         <div className="max-w-6xl mx-auto px-6 py-14">
           <h2 className="text-2xl font-bold text-gray-900 mb-10">How it works</h2>
-          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-px bg-gray-100 rounded-2xl overflow-hidden">
             {[
               { n: '01', title: 'Search by campus', body: 'Enter your university. Filter by gender policy, room type, and budget.' },
               { n: '02', title: 'Book directly', body: 'Verified photos, confirmed prices. Pick your room and move-in date. No agent.' },
               { n: '03', title: 'Pay securely', body: "M-Pesa or card. Held in escrow until you confirm you've moved in." },
               { n: '04', title: 'Move in', body: 'Show your confirmation at the gate. Leave a review for the next student.' },
             ].map(({ n, title, body }) => (
-              <div key={n} className="space-y-2">
-                <p className="text-xs font-mono text-gray-300">{n}</p>
+              <div key={n} className="bg-white p-6 space-y-2">
+                <p className="text-xs font-mono font-bold text-gray-300">{n}</p>
                 <p className="font-semibold text-gray-900 text-sm">{title}</p>
                 <p className="text-xs text-gray-500 leading-relaxed">{body}</p>
               </div>
@@ -163,7 +166,7 @@ export default function HomePage() {
       </section>
 
       {/* ── TESTIMONIALS ─────────────────────────────────────────── */}
-      <section className="border-t border-gray-100">
+      <section className="bg-gray-50">
         <div className="max-w-6xl mx-auto px-6 py-14">
           <div className="flex items-baseline justify-between mb-8">
             <h2 className="text-2xl font-bold text-gray-900">What students say</h2>
@@ -189,7 +192,7 @@ export default function HomePage() {
       </section>
 
       {/* ── CTA ──────────────────────────────────────────────────── */}
-      <section className="border-t border-gray-100">
+      <section className="bg-white">
         <div className="max-w-6xl mx-auto px-6 py-14">
           <div className="bg-gray-950 rounded-2xl px-8 py-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
             <div>
@@ -207,7 +210,7 @@ export default function HomePage() {
       </section>
 
       {/* ── CONTACT ──────────────────────────────────────────────── */}
-      <section id="contact" className="border-t border-gray-100 scroll-mt-16">
+      <section id="contact" className="bg-gray-50 scroll-mt-16">
         <div className="max-w-6xl mx-auto px-6 py-14">
           <h2 className="text-2xl font-bold text-gray-900 mb-1">Get in touch</h2>
           <p className="text-gray-500 text-sm mb-6">Questions about a listing or booking? We respond within a few hours.</p>
