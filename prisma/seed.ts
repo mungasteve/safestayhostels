@@ -4,10 +4,10 @@ import { PrismaPg } from '@prisma/adapter-pg'
 import bcrypt from 'bcryptjs'
 import pg from 'pg'
 
-const NEON_DIRECT = 'postgresql://neondb_owner:***REDACTED***@ep-twilight-sea-awpip4kh.c-12.us-east-1.aws.neon.tech/neondb?sslmode=require'
+if (!process.env.DATABASE_URL) throw new Error('DATABASE_URL is not set')
 
 const pool = new pg.Pool({
-  connectionString: NEON_DIRECT,
+  connectionString: process.env.DATABASE_URL,
   connectionTimeoutMillis: 30000,
   idleTimeoutMillis: 30000,
 })
