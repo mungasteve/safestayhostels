@@ -33,37 +33,34 @@ export default function HomePage() {
     <div className="bg-white text-gray-900">
 
       {/* ── HERO ─────────────────────────────────────────────────── */}
-      <section
-        className="relative flex flex-col justify-end min-h-[92vh] px-6 pb-16 overflow-hidden"
-        style={{ background: '#0f172a' }}
-      >
+      <section className="relative flex flex-col justify-end min-h-[92vh] px-6 pb-16 overflow-hidden bg-gray-50">
         {/* Background image */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/hero-bg.jpg"
           alt=""
-          className="absolute inset-0 w-full h-full object-cover object-center opacity-40"
+          className="absolute inset-0 w-full h-full object-cover object-center opacity-60"
         />
-        {/* Gradient */}
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, #0f172a 30%, transparent 100%)' }} />
+        {/* Gradient — light at top, white-ish at bottom so text is readable */}
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(255,255,255,0.92) 30%, rgba(255,255,255,0.3) 100%)' }} />
 
         <div className="relative z-10 max-w-2xl mx-auto w-full">
-          <h1 className="text-4xl sm:text-5xl font-bold text-white leading-[1.1] tracking-tight mb-4">
+          <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 leading-[1.1] tracking-tight mb-4">
             Find student housing<br />near your campus
           </h1>
-          <p className="text-gray-400 text-lg mb-8">
+          <p className="text-gray-500 text-lg mb-8">
             Verified hostels. Transparent pricing. Secure payments.
           </p>
 
           {/* Search */}
           <form action={searchAction} className="flex gap-2 mb-6">
             <div className="relative flex-1">
-              <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500" />
+              <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
               <input
                 name="q"
                 list="campus-list"
                 placeholder="Search by campus or hostel name…"
-                className="w-full h-12 pl-10 pr-4 rounded-xl bg-white text-gray-900 text-sm placeholder:text-gray-400 border-0 outline-none focus:ring-2 focus:ring-white/20"
+                className="w-full h-12 pl-10 pr-4 rounded-xl bg-white text-gray-900 text-sm placeholder:text-gray-400 border border-gray-200 outline-none focus:ring-2 focus:ring-gray-900/10"
               />
               <datalist id="campus-list">
                 {CAMPUSES.map(c => <option key={c} value={c} />)}
@@ -71,7 +68,7 @@ export default function HomePage() {
             </div>
             <button
               type="submit"
-              className="h-12 px-6 rounded-xl bg-white text-gray-900 text-sm font-semibold hover:bg-gray-100 transition-colors shrink-0"
+              className="h-12 px-6 rounded-xl bg-gray-900 text-white text-sm font-semibold hover:bg-gray-800 transition-colors shrink-0"
             >
               Search
             </button>
@@ -79,7 +76,7 @@ export default function HomePage() {
 
           <div className="flex flex-wrap gap-x-6 gap-y-2">
             {['No hidden fees', 'M-Pesa & card accepted', 'Verified owners only', 'Free to browse'].map(t => (
-              <span key={t} className="text-xs text-gray-500">{t}</span>
+              <span key={t} className="text-xs text-gray-400">{t}</span>
             ))}
           </div>
         </div>
@@ -146,21 +143,33 @@ export default function HomePage() {
 
       {/* ── HOW IT WORKS ─────────────────────────────────────────── */}
       <section id="how-it-works" className="bg-white scroll-mt-16">
-        <div className="max-w-6xl mx-auto px-6 py-14">
-          <h2 className="text-2xl font-bold text-gray-900 mb-10">How it works</h2>
-          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-px bg-gray-100 rounded-2xl overflow-hidden">
-            {[
-              { n: '01', title: 'Search by campus', body: 'Enter your university. Filter by gender policy, room type, and budget.' },
-              { n: '02', title: 'Book directly', body: 'Verified photos, confirmed prices. Pick your room and move-in date. No agent.' },
-              { n: '03', title: 'Pay securely', body: "M-Pesa or card. Held in escrow until you confirm you've moved in." },
-              { n: '04', title: 'Move in', body: 'Show your confirmation at the gate. Leave a review for the next student.' },
-            ].map(({ n, title, body }) => (
-              <div key={n} className="bg-white p-6 space-y-2">
-                <p className="text-xs font-mono font-bold text-gray-300">{n}</p>
-                <p className="font-semibold text-gray-900 text-sm">{title}</p>
-                <p className="text-xs text-gray-500 leading-relaxed">{body}</p>
-              </div>
-            ))}
+        <div className="max-w-3xl mx-auto px-6 py-14">
+          <h2 className="text-2xl font-bold text-gray-900 mb-8">How it works</h2>
+          <div className="space-y-8">
+            <div>
+              <h3 className="font-semibold text-gray-900 mb-2">Search by campus</h3>
+              <p className="text-sm text-gray-500 leading-relaxed">
+                Start by entering your university — University of Nairobi, Kenyatta University, Strathmore, and more. Every listing is tagged to a campus and shows the walking distance to the main gate, so you're never guessing how far you'll be from lectures.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-gray-900 mb-2">Browse verified listings</h3>
+              <p className="text-sm text-gray-500 leading-relaxed">
+                Every hostel on SafeStay has been physically visited before it goes live. The photos are real, the prices are confirmed, and the owner's identity is verified. Filter by room type, gender policy, and monthly budget until you find the right fit.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-gray-900 mb-2">Book and pay securely</h3>
+              <p className="text-sm text-gray-500 leading-relaxed">
+                Pick your room and move-in date, then pay via M-Pesa or card. Your deposit is held in escrow — it only reaches the owner after you confirm you've moved in and everything matches what was advertised. No cash upfront, no risk.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-gray-900 mb-2">Move in and leave a review</h3>
+              <p className="text-sm text-gray-500 leading-relaxed">
+                Show your booking confirmation at the gate on move-in day. Once you're settled, leave an honest review. Every review on SafeStay is from a student who completed a real booking — which means the next student can trust what they read.
+              </p>
+            </div>
           </div>
         </div>
       </section>
