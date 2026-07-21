@@ -87,7 +87,8 @@ export default function HomePage() {
           {rooms.map(({ img, type, price }) => (
             <Link href="/hostels" key={type} className="group block rounded-xl overflow-hidden border border-gray-200 hover:border-gray-300 hover:shadow-sm transition-all duration-200">
               <div className="relative h-40 overflow-hidden">
-                <Image src={img} alt={type} fill sizes="(max-width: 768px) 50vw, 25vw" className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={img} alt={type} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/65 to-transparent" />
                 <div className="absolute bottom-3 left-3 text-white">
                   <p className="font-semibold text-sm">{type}</p>
