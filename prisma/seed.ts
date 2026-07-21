@@ -37,29 +37,42 @@ async function main() {
     }),
   ])
 
-  const [uon, ku, strathmore] = campuses
+  const [uon, ku, strathmore, mku] = campuses
 
   // ── Owner accounts ────────────────────────────────────────────────────────
   const hash = await bcrypt.hash('password123', 10)
 
-  const owner1 = await prisma.user.upsert({
-    where: { email: 'owner1@safestay.co.ke' },
-    update: {},
-    create: { id: 'owner-1', name: 'James Kariuki', email: 'owner1@safestay.co.ke', passwordHash: hash, role: 'OWNER', phone: '+254711000001' },
-  })
-  const owner2 = await prisma.user.upsert({
-    where: { email: 'owner2@safestay.co.ke' },
-    update: {},
-    create: { id: 'owner-2', name: 'Grace Njeri', email: 'owner2@safestay.co.ke', passwordHash: hash, role: 'OWNER', phone: '+254711000002' },
-  })
-  const owner3 = await prisma.user.upsert({
-    where: { email: 'owner3@safestay.co.ke' },
-    update: {},
-    create: { id: 'owner-3', name: 'Peter Omondi', email: 'owner3@safestay.co.ke', passwordHash: hash, role: 'OWNER', phone: '+254711000003' },
-  })
+  const [owner1, owner2, owner3, owner4, owner5] = await Promise.all([
+    prisma.user.upsert({
+      where: { email: 'owner1@safestay.co.ke' },
+      update: {},
+      create: { id: 'owner-1', name: 'James Kariuki', email: 'owner1@safestay.co.ke', passwordHash: hash, role: 'OWNER', phone: '+254711000001' },
+    }),
+    prisma.user.upsert({
+      where: { email: 'owner2@safestay.co.ke' },
+      update: {},
+      create: { id: 'owner-2', name: 'Grace Njeri', email: 'owner2@safestay.co.ke', passwordHash: hash, role: 'OWNER', phone: '+254711000002' },
+    }),
+    prisma.user.upsert({
+      where: { email: 'owner3@safestay.co.ke' },
+      update: {},
+      create: { id: 'owner-3', name: 'Peter Omondi', email: 'owner3@safestay.co.ke', passwordHash: hash, role: 'OWNER', phone: '+254711000003' },
+    }),
+    prisma.user.upsert({
+      where: { email: 'owner4@safestay.co.ke' },
+      update: {},
+      create: { id: 'owner-4', name: 'Faith Wambui', email: 'owner4@safestay.co.ke', passwordHash: hash, role: 'OWNER', phone: '+254711000004' },
+    }),
+    prisma.user.upsert({
+      where: { email: 'owner5@safestay.co.ke' },
+      update: {},
+      create: { id: 'owner-5', name: 'David Mutua', email: 'owner5@safestay.co.ke', passwordHash: hash, role: 'OWNER', phone: '+254711000005' },
+    }),
+  ])
 
   // ── Hostels ───────────────────────────────────────────────────────────────
   const hostelsData = [
+    // UoN
     {
       id: 'hostel-1',
       ownerId: owner1.id,
@@ -88,7 +101,7 @@ async function main() {
       ownerId: owner2.id,
       campusId: uon.id,
       name: 'Uhuru Gardens Hostel',
-      description: 'Quiet, female-only hostel with a garden courtyard. 8-minute matatu ride to UoN. CCTV, backup generator, clean shared kitchens.',
+      description: 'Quiet, female-only hostel with a garden courtyard. 8-minute walk to UoN. CCTV, backup generator, clean shared kitchens.',
       address: 'Uhuru Highway, Nairobi',
       latitude: -1.2900, longitude: 36.8150,
       gender: 'FEMALE' as const,
@@ -105,6 +118,29 @@ async function main() {
         { type: 'BEDSITTER' as const, pricePerMonth: 11000, pricePerTerm: 33000, capacity: 1, availableUnits: 1 },
       ],
     },
+    {
+      id: 'hostel-7',
+      ownerId: owner4.id,
+      campusId: uon.id,
+      name: 'Milimani Student Flats',
+      description: 'Self-contained bedsitters and single rooms in Milimani, 7 minutes from UoN. Quiet neighbourhood, fibre internet, ample parking.',
+      address: 'Milimani Road, Nairobi',
+      latitude: -1.2850, longitude: 36.8100,
+      gender: 'MIXED' as const,
+      amenities: ['Fibre Wi-Fi', 'Parking', 'Water', 'Security', 'CCTV'],
+      verified: true,
+      status: 'LIVE' as const,
+      minutesToCampus: 7,
+      images: [
+        { url: 'https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=800&q=80', isCover: true },
+        { url: 'https://images.unsplash.com/photo-1554995207-c18c203602cb?w=800&q=80', isCover: false },
+      ],
+      rooms: [
+        { type: 'BEDSITTER' as const, pricePerMonth: 12000, pricePerTerm: 36000, capacity: 1, availableUnits: 3 },
+        { type: 'SINGLE' as const, pricePerMonth: 7000, pricePerTerm: 21000, capacity: 1, availableUnits: 5 },
+      ],
+    },
+    // KU
     {
       id: 'hostel-3',
       ownerId: owner1.id,
@@ -150,6 +186,29 @@ async function main() {
       ],
     },
     {
+      id: 'hostel-8',
+      ownerId: owner5.id,
+      campusId: ku.id,
+      name: 'Roysambu Nest',
+      description: 'Female-only hostel in Roysambu, 10 minutes from KU. Homely atmosphere, shared kitchen, reliable water and electricity.',
+      address: 'Roysambu, Nairobi',
+      latitude: -1.2100, longitude: 36.8900,
+      gender: 'FEMALE' as const,
+      amenities: ['Wi-Fi', 'Kitchen', 'Water', 'Security', 'Laundry'],
+      verified: true,
+      status: 'LIVE' as const,
+      minutesToCampus: 10,
+      images: [
+        { url: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=800&q=80', isCover: true },
+        { url: 'https://images.unsplash.com/photo-1560185007-cde436f6a4d0?w=800&q=80', isCover: false },
+      ],
+      rooms: [
+        { type: 'SINGLE' as const, pricePerMonth: 5000, pricePerTerm: 15000, capacity: 1, availableUnits: 7 },
+        { type: 'SHARED' as const, pricePerMonth: 3000, pricePerTerm: 9000, capacity: 2, availableUnits: 6 },
+      ],
+    },
+    // Strathmore
+    {
       id: 'hostel-5',
       ownerId: owner2.id,
       campusId: strathmore.id,
@@ -192,6 +251,95 @@ async function main() {
         { type: 'SHARED' as const, pricePerMonth: 3000, pricePerTerm: 9000, capacity: 2, availableUnits: 8 },
       ],
     },
+    {
+      id: 'hostel-9',
+      ownerId: owner4.id,
+      campusId: strathmore.id,
+      name: 'Lang\'ata View Residences',
+      description: 'Mixed hostel with great views, 9 minutes from Strathmore. Spacious rooms, study area, and a rooftop terrace.',
+      address: 'Lang\'ata Road, Nairobi',
+      latitude: -1.3150, longitude: 36.8050,
+      gender: 'MIXED' as const,
+      amenities: ['Wi-Fi', 'Study room', 'Water', 'Security', 'Rooftop'],
+      verified: true,
+      status: 'LIVE' as const,
+      minutesToCampus: 9,
+      images: [
+        { url: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80', isCover: true },
+        { url: 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&q=80', isCover: false },
+      ],
+      rooms: [
+        { type: 'SINGLE' as const, pricePerMonth: 6000, pricePerTerm: 18000, capacity: 1, availableUnits: 5 },
+        { type: 'EN_SUITE' as const, pricePerMonth: 10000, pricePerTerm: 30000, capacity: 1, availableUnits: 2 },
+        { type: 'SHARED' as const, pricePerMonth: 3500, pricePerTerm: 10500, capacity: 2, availableUnits: 4 },
+      ],
+    },
+    // MKU
+    {
+      id: 'hostel-10',
+      ownerId: owner5.id,
+      campusId: mku.id,
+      name: 'Thika Central Hostel',
+      description: 'Affordable and well-located hostel 4 minutes from MKU Thika campus. Clean rooms, borehole water, and 24/7 security.',
+      address: 'Thika Town, Thika',
+      latitude: -1.0380, longitude: 37.0720,
+      gender: 'MIXED' as const,
+      amenities: ['Wi-Fi', 'Borehole water', 'Security', 'Laundry'],
+      verified: true,
+      status: 'LIVE' as const,
+      minutesToCampus: 4,
+      images: [
+        { url: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&q=80', isCover: true },
+        { url: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&q=80', isCover: false },
+      ],
+      rooms: [
+        { type: 'SINGLE' as const, pricePerMonth: 4000, pricePerTerm: 12000, capacity: 1, availableUnits: 8 },
+        { type: 'SHARED' as const, pricePerMonth: 2500, pricePerTerm: 7500, capacity: 2, availableUnits: 10 },
+      ],
+    },
+    {
+      id: 'hostel-11',
+      ownerId: owner1.id,
+      campusId: mku.id,
+      name: 'Blue Nile Student Suites',
+      description: 'Modern en-suite and bedsitter units near MKU. Ideal for postgraduate students. Quiet, secure, with fibre internet.',
+      address: 'Makongeni, Thika',
+      latitude: -1.0400, longitude: 37.0650,
+      gender: 'MIXED' as const,
+      amenities: ['Fibre Wi-Fi', 'Security', 'CCTV', 'Water', 'Parking'],
+      verified: true,
+      status: 'LIVE' as const,
+      minutesToCampus: 6,
+      images: [
+        { url: 'https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=800&q=80', isCover: true },
+        { url: 'https://images.unsplash.com/photo-1560185007-cde436f6a4d0?w=800&q=80', isCover: false },
+      ],
+      rooms: [
+        { type: 'EN_SUITE' as const, pricePerMonth: 8500, pricePerTerm: 25500, capacity: 1, availableUnits: 4 },
+        { type: 'BEDSITTER' as const, pricePerMonth: 10000, pricePerTerm: 30000, capacity: 1, availableUnits: 2 },
+      ],
+    },
+    {
+      id: 'hostel-12',
+      ownerId: owner3.id,
+      campusId: mku.id,
+      name: 'Gatuanyaga Ladies Hostel',
+      description: 'Female-only hostel 8 minutes from MKU. Safe, clean, and managed by a resident caretaker. Shared kitchen and study room.',
+      address: 'Gatuanyaga, Thika',
+      latitude: -1.0450, longitude: 37.0600,
+      gender: 'FEMALE' as const,
+      amenities: ['Wi-Fi', 'Kitchen', 'Study room', 'Security', 'Water'],
+      verified: false,
+      status: 'LIVE' as const,
+      minutesToCampus: 8,
+      images: [
+        { url: 'https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=800&q=80', isCover: true },
+      ],
+      rooms: [
+        { type: 'SINGLE' as const, pricePerMonth: 3500, pricePerTerm: 10500, capacity: 1, availableUnits: 9 },
+        { type: 'SHARED' as const, pricePerMonth: 2200, pricePerTerm: 6600, capacity: 2, availableUnits: 12 },
+      ],
+    },
   ]
 
   for (const h of hostelsData) {
@@ -207,14 +355,13 @@ async function main() {
     })
   }
 
-  // ── Student + reviews ─────────────────────────────────────────────────────
+  // ── Student + review ──────────────────────────────────────────────────────
   const student = await prisma.user.upsert({
     where: { email: 'student@safestay.co.ke' },
     update: {},
     create: { id: 'student-1', name: 'Amina Wanjiku', email: 'student@safestay.co.ke', passwordHash: hash, role: 'STUDENT' },
   })
 
-  // Create a completed booking so we can attach reviews
   const room = await prisma.room.findFirst({ where: { hostelId: 'hostel-1' } })
   if (room) {
     const booking = await prisma.booking.upsert({
@@ -243,7 +390,7 @@ async function main() {
     })
   }
 
-  console.log('✅ Seed complete — 4 campuses, 6 hostels, 3 owners, 1 student, 1 review')
+  console.log('✅ Seed complete — 4 campuses, 12 hostels, 5 owners, 1 student, 1 review')
 }
 
 main().catch(console.error).finally(() => prisma.$disconnect())

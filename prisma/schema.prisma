@@ -88,8 +88,9 @@ model Hostel {
   longitude   Float
   gender      Gender
   amenities   String[]
-  verified    Boolean       @default(false)
-  status      HostelStatus  @default(DRAFT)
+  verified         Boolean       @default(false)
+  status           HostelStatus  @default(DRAFT)
+  minutesToCampus  Int           @default(0)
   images      HostelImage[]
   rooms       Room[]
   reviews     Review[]
