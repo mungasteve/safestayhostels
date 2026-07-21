@@ -23,7 +23,7 @@ export default function TermsPage() {
         </section>
         <section>
           <h2 className="text-base font-bold text-slate-900 mb-3">5. Contact</h2>
-          <p>For any questions regarding these terms, contact us at JackstarKombo@gmail.com or +254 704 535 727.</p>
+          <p>For any questions regarding these terms, contact us at JackstarKombo@gmail.com or +254 734 345 156.</p>
         </section>
       </div>
     </div>

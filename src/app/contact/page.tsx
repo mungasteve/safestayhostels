@@ -27,7 +27,7 @@ export default function ContactPage() {
           </a>
 
           <a
-            href="https://wa.me/254704535727"
+            href="https://wa.me/254734345156"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-4 p-4 rounded-xl border border-gray-200 hover:border-gray-300 hover:shadow-sm transition-all group"
@@ -37,7 +37,7 @@ export default function ContactPage() {
             </div>
             <div>
               <p className="font-semibold text-sm text-gray-900">WhatsApp</p>
-              <p className="text-xs text-gray-500 mt-0.5">+254 704 535 727 — fastest response</p>
+              <p className="text-xs text-gray-500 mt-0.5">+254 734 345 156 — fastest response</p>
             </div>
           </a>
 
