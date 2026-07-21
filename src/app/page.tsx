@@ -9,7 +9,12 @@ const CAMPUSES = [
   'University of Nairobi',
   'Kenyatta University',
   'Strathmore University',
+  'USIU-Africa',
+  'Daystar University',
+  'Multimedia University of Kenya',
   'Mount Kenya University',
+  'Kisii University',
+  'Maseno University',
 ]
 
 export default async function HomePage() {
@@ -156,7 +161,7 @@ export default async function HomePage() {
               </div>
             </div>
             {[
-              { heading: 'Explore', links: [{ href: '/hostels', label: 'Browse hostels' }, { href: '/how-it-works', label: 'How it works' }, { href: '/about', label: 'About' }, { href: '/contact', label: 'Contact' }] },
+              { heading: 'Explore', links: [{ href: '/hostels', label: 'Browse hostels' }, { href: '/how-it-works', label: 'How it works' }, { href: '/contact', label: 'Contact' }] },
               { heading: 'Account', links: [{ href: '/login', label: 'Sign in' }, { href: '/register', label: 'Create account' }] },
               { heading: 'Legal', links: [{ href: '/terms', label: 'Terms' }, { href: '/privacy', label: 'Privacy' }, { href: '/faq', label: 'FAQ' }] },
             ].map(({ heading, links }) => (
