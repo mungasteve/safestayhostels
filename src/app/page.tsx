@@ -151,7 +151,7 @@ export default async function HomePage() {
               <p className="font-bold text-white text-sm">SafeStay</p>
               <p className="text-xs text-gray-500 leading-relaxed">Verified student accommodation near your campus.</p>
               <div className="space-y-1 text-xs text-gray-500">
-                <a href="mailto:hello@safestayhostels.com" className="block hover:text-white transition-colors">hello@safestayhostels.com</a>
+                <a href="mailto:Safestayhostels26@gmail.com" className="block hover:text-white transition-colors">Safestayhostels26@gmail.com</a>
                 <a href="https://wa.me/254704535727" className="block hover:text-white transition-colors">+254 704 535 727</a>
               </div>
             </div>
