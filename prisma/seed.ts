@@ -2,16 +2,10 @@ import 'dotenv/config'
 import { PrismaClient } from '@prisma/client'
 import { PrismaPg } from '@prisma/adapter-pg'
 import bcrypt from 'bcryptjs'
-import pg from 'pg'
 
 if (!process.env.DATABASE_URL) throw new Error('DATABASE_URL is not set')
 
-const pool = new pg.Pool({
-  connectionString: process.env.DATABASE_URL,
-  connectionTimeoutMillis: 30000,
-  idleTimeoutMillis: 30000,
-})
-const adapter = new PrismaPg(pool)
+const adapter = new PrismaPg({ connectionString: process.env.DATABASE_URL })
 const prisma = new PrismaClient({ adapter })
 
 async function main() {
