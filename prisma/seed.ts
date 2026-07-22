@@ -281,8 +281,8 @@ async function main() {
         await prisma.payment.deleteMany({ where: { bookingId: { in: bookingIds } } })
         await prisma.booking.deleteMany({ where: { id: { in: bookingIds } } })
       }
-      await prisma.room.deleteMany({ where: { hostelId: h.id } })
     }
+    await prisma.room.deleteMany({ where: { hostelId: h.id } })
     await prisma.hostelImage.deleteMany({ where: { hostelId: h.id } })
     await prisma.hostel.upsert({
       where: { id: h.id },
