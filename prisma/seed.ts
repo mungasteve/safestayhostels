@@ -270,9 +270,23 @@ async function main() {
 
   for (const h of hostels) {
     const { images, rooms, minutesToCampus, ...data } = h
+    // Clear dependent records before recreating
+    const existingRooms = await prisma.room.findMany({ where: { hostelId: h.id }, select: { id: true } })
+    const roomIds = existingRooms.map(r => r.id)
+    if (roomIds.length) {
+      const bookings = await prisma.booking.findMany({ where: { roomId: { in: roomIds } }, select: { id: true } })
+      const bookingIds = bookings.map(b => b.id)
+      if (bookingIds.length) {
+        await prisma.review.deleteMany({ where: { bookingId: { in: bookingIds } } })
+        await prisma.payment.deleteMany({ where: { bookingId: { in: bookingIds } } })
+        await prisma.booking.deleteMany({ where: { id: { in: bookingIds } } })
+      }
+      await prisma.room.deleteMany({ where: { hostelId: h.id } })
+    }
+    await prisma.hostelImage.deleteMany({ where: { hostelId: h.id } })
     await prisma.hostel.upsert({
       where: { id: h.id },
-      update: { name: h.name, description: h.description },
+      update: { ...data, minutesToCampus, images: { create: images }, rooms: { create: rooms } },
       create: { ...data, images: { create: images }, rooms: { create: rooms } },
     })
   }
