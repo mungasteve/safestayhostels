@@ -25,8 +25,8 @@ export default async function HomePage() {
   }
 
   const featured = await prisma.hostel.findMany({
-    where: { status: 'LIVE' },
-    orderBy: { createdAt: 'desc' },
+    where: { status: 'LIVE', verified: true },
+    orderBy: { id: 'desc' },
     take: 3,
     include: {
       campus: true,
