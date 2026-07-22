@@ -60,7 +60,7 @@ export default async function HostelDetailPage({ params }: { params: Promise<{ i
                 <p className="font-semibold">KES {room.pricePerMonth.toLocaleString()}/mo</p>
                 {room.availableUnits > 0 && (
                   <div className="mt-2">
-                    <BookingForm roomId={room.id} price={room.pricePerMonth} />
+                    <BookingForm roomId={room.id} price={room.pricePerMonth} roomType={room.type} hostelName={hostel.name} />
                   </div>
                 )}
               </div>
