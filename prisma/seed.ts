@@ -64,12 +64,12 @@ async function main() {
       ],
     },
     {
-      id: 'hostel-7', ownerId: o4.id, campusId: 'campus-uon',
-      name: 'SafeStay Upper Hill', address: 'Upper Hill, Nairobi',
-      description: 'Self-contained bedsitters and single rooms in Upper Hill, 7 minutes from UoN. Quiet neighbourhood, fibre internet.',
+      id: 'hostel-7', ownerId: o4.id, campusId: 'campus-tuk',
+      name: 'SafeStay Ngong Road', address: 'Ngong Road, Nairobi',
+      description: 'Self-contained bedsitters and single rooms on Ngong Road, 6 minutes from TUK. Quiet neighbourhood, fibre internet.',
       latitude: -1.2850, longitude: 36.8100, gender: 'MIXED' as const,
       amenities: ['Fibre Wi-Fi', 'Parking', 'Water', 'Security', 'CCTV'],
-      verified: true, status: 'LIVE' as const, minutesToCampus: 7,
+      verified: true, status: 'LIVE' as const, minutesToCampus: 6,
       images: [{ url: '/hostel-3.jpg', isCover: true }, { url: '/hostel-4.jpg', isCover: false }],
       rooms: [
         { type: 'BEDSITTER' as const, pricePerMonth: 8000, pricePerTerm: 24000, capacity: 1, availableUnits: 3 },
