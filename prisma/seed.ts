@@ -42,7 +42,7 @@ async function main() {
       latitude: -1.2820, longitude: 36.8200, gender: 'MIXED' as const,
       amenities: ['Wi-Fi', 'Security', 'Water', 'Study room', 'Laundry'],
       verified: true, status: 'LIVE' as const, minutesToCampus: 5,
-      images: [{ url: '/room-1.jpg', isCover: true }, { url: '/room-2.jpg', isCover: false }],
+      images: [{ url: '/hostel-1.jpg', isCover: true }, { url: '/hostel-2.jpg', isCover: false }],
       rooms: [
         { type: 'SINGLE' as const, pricePerMonth: 6500, pricePerTerm: 19500, capacity: 1, availableUnits: 4 },
         { type: 'SHARED' as const, pricePerMonth: 7000, pricePerTerm: 21000, capacity: 2, availableUnits: 6 },
@@ -56,7 +56,7 @@ async function main() {
       latitude: -1.2900, longitude: 36.8150, gender: 'FEMALE' as const,
       amenities: ['Wi-Fi', 'CCTV', 'Generator', 'Kitchen', 'Water'],
       verified: true, status: 'LIVE' as const, minutesToCampus: 8,
-      images: [{ url: '/room-3.jpg', isCover: true }, { url: '/room-single.jpg', isCover: false }],
+      images: [{ url: '/hostel-2.jpg', isCover: true }, { url: '/hostel-3.jpg', isCover: false }],
       rooms: [
         { type: 'SINGLE' as const, pricePerMonth: 6500, pricePerTerm: 19500, capacity: 1, availableUnits: 5 },
         { type: 'BEDSITTER' as const, pricePerMonth: 8500, pricePerTerm: 25500, capacity: 1, availableUnits: 1 },
@@ -69,7 +69,7 @@ async function main() {
       latitude: -1.2850, longitude: 36.8100, gender: 'MIXED' as const,
       amenities: ['Fibre Wi-Fi', 'Parking', 'Water', 'Security', 'CCTV'],
       verified: true, status: 'LIVE' as const, minutesToCampus: 7,
-      images: [{ url: '/room-ensuite.jpg', isCover: true }, { url: '/room-bedsitter.jpg', isCover: false }],
+      images: [{ url: '/hostel-3.jpg', isCover: true }, { url: '/hostel-4.jpg', isCover: false }],
       rooms: [
         { type: 'BEDSITTER' as const, pricePerMonth: 8000, pricePerTerm: 24000, capacity: 1, availableUnits: 3 },
         { type: 'SINGLE' as const, pricePerMonth: 7000, pricePerTerm: 21000, capacity: 1, availableUnits: 5 },
@@ -83,7 +83,7 @@ async function main() {
       latitude: -1.1850, longitude: 36.9300, gender: 'MALE' as const,
       amenities: ['Wi-Fi', 'Gym', 'Security', 'Parking', 'Water', 'Study room'],
       verified: true, status: 'LIVE' as const, minutesToCampus: 3,
-      images: [{ url: '/room-shared.jpg', isCover: true }, { url: '/room-1.jpg', isCover: false }],
+      images: [{ url: '/hostel-4.jpg', isCover: true }, { url: '/hostel-5.jpg', isCover: false }],
       rooms: [
         { type: 'EN_SUITE' as const, pricePerMonth: 9000, pricePerTerm: 27000, capacity: 1, availableUnits: 3 },
         { type: 'SINGLE' as const, pricePerMonth: 7500, pricePerTerm: 22500, capacity: 1, availableUnits: 4 },
@@ -97,7 +97,7 @@ async function main() {
       latitude: -1.2000, longitude: 36.9000, gender: 'MIXED' as const,
       amenities: ['Wi-Fi', 'Water', 'Security', 'Laundry'],
       verified: false, status: 'LIVE' as const, minutesToCampus: 12,
-      images: [{ url: '/room-2.jpg', isCover: true }],
+      images: [{ url: '/hostel-5.jpg', isCover: true }],
       rooms: [
         { type: 'SHARED' as const, pricePerMonth: 6500, pricePerTerm: 19500, capacity: 3, availableUnits: 10 },
         { type: 'SINGLE' as const, pricePerMonth: 7500, pricePerTerm: 22500, capacity: 1, availableUnits: 3 },
@@ -110,7 +110,7 @@ async function main() {
       latitude: -1.2100, longitude: 36.8900, gender: 'FEMALE' as const,
       amenities: ['Wi-Fi', 'Kitchen', 'Water', 'Security', 'Laundry'],
       verified: true, status: 'LIVE' as const, minutesToCampus: 10,
-      images: [{ url: '/room-3.jpg', isCover: true }, { url: '/room-single.jpg', isCover: false }],
+      images: [{ url: '/hostel-1.jpg', isCover: true }, { url: '/hostel-2.jpg', isCover: false }],
       rooms: [
         { type: 'SINGLE' as const, pricePerMonth: 7000, pricePerTerm: 21000, capacity: 1, availableUnits: 7 },
         { type: 'SHARED' as const, pricePerMonth: 6500, pricePerTerm: 19500, capacity: 2, availableUnits: 6 },
@@ -124,7 +124,7 @@ async function main() {
       latitude: -1.3050, longitude: 36.8100, gender: 'MIXED' as const,
       amenities: ['Fibre Wi-Fi', 'Generator', 'CCTV', 'Concierge', 'Water', 'Parking'],
       verified: true, status: 'LIVE' as const, minutesToCampus: 6,
-      images: [{ url: '/room-ensuite.jpg', isCover: true }, { url: '/room-bedsitter.jpg', isCover: false }],
+      images: [{ url: '/hostel-2.jpg', isCover: true }, { url: '/hostel-3.jpg', isCover: false }],
       rooms: [
         { type: 'BEDSITTER' as const, pricePerMonth: 8500, pricePerTerm: 25500, capacity: 1, availableUnits: 2 },
         { type: 'EN_SUITE' as const, pricePerMonth: 9000, pricePerTerm: 27000, capacity: 1, availableUnits: 3 },
@@ -137,7 +137,7 @@ async function main() {
       latitude: -1.3200, longitude: 36.8200, gender: 'FEMALE' as const,
       amenities: ['Wi-Fi', 'Kitchen', 'Laundry', 'Security', 'Water'],
       verified: true, status: 'LIVE' as const, minutesToCampus: 10,
-      images: [{ url: '/room-1.jpg', isCover: true }],
+      images: [{ url: '/hostel-3.jpg', isCover: true }],
       rooms: [
         { type: 'SINGLE' as const, pricePerMonth: 7000, pricePerTerm: 21000, capacity: 1, availableUnits: 6 },
         { type: 'SHARED' as const, pricePerMonth: 6500, pricePerTerm: 19500, capacity: 2, availableUnits: 8 },
@@ -150,7 +150,7 @@ async function main() {
       latitude: -1.3150, longitude: 36.8050, gender: 'MIXED' as const,
       amenities: ['Wi-Fi', 'Study room', 'Water', 'Security', 'Rooftop'],
       verified: true, status: 'LIVE' as const, minutesToCampus: 9,
-      images: [{ url: '/room-2.jpg', isCover: true }, { url: '/room-shared.jpg', isCover: false }],
+      images: [{ url: '/hostel-4.jpg', isCover: true }, { url: '/hostel-5.jpg', isCover: false }],
       rooms: [
         { type: 'SINGLE' as const, pricePerMonth: 7000, pricePerTerm: 21000, capacity: 1, availableUnits: 5 },
         { type: 'EN_SUITE' as const, pricePerMonth: 9000, pricePerTerm: 27000, capacity: 1, availableUnits: 2 },
@@ -165,7 +165,7 @@ async function main() {
       latitude: -1.0380, longitude: 37.0720, gender: 'MIXED' as const,
       amenities: ['Wi-Fi', 'Borehole water', 'Security', 'Laundry'],
       verified: true, status: 'LIVE' as const, minutesToCampus: 4,
-      images: [{ url: '/room-3.jpg', isCover: true }, { url: '/room-1.jpg', isCover: false }],
+      images: [{ url: '/hostel-5.jpg', isCover: true }, { url: '/hostel-1.jpg', isCover: false }],
       rooms: [
         { type: 'SINGLE' as const, pricePerMonth: 6500, pricePerTerm: 19500, capacity: 1, availableUnits: 8 },
         { type: 'SHARED' as const, pricePerMonth: 7500, pricePerTerm: 22500, capacity: 2, availableUnits: 10 },
@@ -178,7 +178,7 @@ async function main() {
       latitude: -1.0400, longitude: 37.0650, gender: 'MIXED' as const,
       amenities: ['Fibre Wi-Fi', 'Security', 'CCTV', 'Water', 'Parking'],
       verified: true, status: 'LIVE' as const, minutesToCampus: 6,
-      images: [{ url: '/room-ensuite.jpg', isCover: true }, { url: '/room-bedsitter.jpg', isCover: false }],
+      images: [{ url: '/hostel-1.jpg', isCover: true }, { url: '/hostel-2.jpg', isCover: false }],
       rooms: [
         { type: 'EN_SUITE' as const, pricePerMonth: 8500, pricePerTerm: 25500, capacity: 1, availableUnits: 4 },
         { type: 'BEDSITTER' as const, pricePerMonth: 9000, pricePerTerm: 27000, capacity: 1, availableUnits: 2 },
@@ -192,7 +192,7 @@ async function main() {
       latitude: -1.2180, longitude: 36.8920, gender: 'MIXED' as const,
       amenities: ['Fibre Wi-Fi', 'CCTV', 'Generator', 'Water', 'Security'],
       verified: true, status: 'LIVE' as const, minutesToCampus: 5,
-      images: [{ url: '/room-2.jpg', isCover: true }, { url: '/room-single.jpg', isCover: false }],
+      images: [{ url: '/hostel-2.jpg', isCover: true }, { url: '/hostel-3.jpg', isCover: false }],
       rooms: [
         { type: 'SINGLE' as const, pricePerMonth: 7000, pricePerTerm: 21000, capacity: 1, availableUnits: 5 },
         { type: 'EN_SUITE' as const, pricePerMonth: 9000, pricePerTerm: 27000, capacity: 1, availableUnits: 3 },
@@ -206,7 +206,7 @@ async function main() {
       latitude: -1.3220, longitude: 36.7820, gender: 'MIXED' as const,
       amenities: ['Wi-Fi', 'Water', 'Security', 'Laundry', 'Kitchen'],
       verified: true, status: 'LIVE' as const, minutesToCampus: 7,
-      images: [{ url: '/room-3.jpg', isCover: true }, { url: '/room-shared.jpg', isCover: false }],
+      images: [{ url: '/hostel-3.jpg', isCover: true }, { url: '/hostel-4.jpg', isCover: false }],
       rooms: [
         { type: 'SINGLE' as const, pricePerMonth: 7000, pricePerTerm: 21000, capacity: 1, availableUnits: 6 },
         { type: 'SHARED' as const, pricePerMonth: 6500, pricePerTerm: 19500, capacity: 2, availableUnits: 8 },
@@ -220,7 +220,7 @@ async function main() {
       latitude: -0.6830, longitude: 34.7680, gender: 'MIXED' as const,
       amenities: ['Wi-Fi', 'Solar power', 'Borehole water', 'Study room', 'Security'],
       verified: true, status: 'LIVE' as const, minutesToCampus: 6,
-      images: [{ url: '/room-1.jpg', isCover: true }, { url: '/room-2.jpg', isCover: false }],
+      images: [{ url: '/hostel-4.jpg', isCover: true }, { url: '/hostel-5.jpg', isCover: false }],
       rooms: [
         { type: 'SINGLE' as const, pricePerMonth: 7000, pricePerTerm: 21000, capacity: 1, availableUnits: 8 },
         { type: 'SHARED' as const, pricePerMonth: 6500, pricePerTerm: 19500, capacity: 2, availableUnits: 12 },
@@ -233,7 +233,7 @@ async function main() {
       latitude: -0.6800, longitude: 34.7650, gender: 'FEMALE' as const,
       amenities: ['Wi-Fi', 'Kitchen', 'Security', 'Water', 'Laundry'],
       verified: false, status: 'LIVE' as const, minutesToCampus: 9,
-      images: [{ url: '/room-3.jpg', isCover: true }],
+      images: [{ url: '/hostel-5.jpg', isCover: true }],
       rooms: [
         { type: 'SINGLE' as const, pricePerMonth: 6500, pricePerTerm: 19500, capacity: 1, availableUnits: 10 },
         { type: 'SHARED' as const, pricePerMonth: 7500, pricePerTerm: 22500, capacity: 2, availableUnits: 14 },
@@ -247,7 +247,7 @@ async function main() {
       latitude: -0.0060, longitude: 34.5990, gender: 'MIXED' as const,
       amenities: ['Wi-Fi', 'Water', 'Security', 'Laundry'],
       verified: true, status: 'LIVE' as const, minutesToCampus: 4,
-      images: [{ url: '/room-2.jpg', isCover: true }, { url: '/room-1.jpg', isCover: false }],
+      images: [{ url: '/hostel-1.jpg', isCover: true }, { url: '/hostel-2.jpg', isCover: false }],
       rooms: [
         { type: 'SINGLE' as const, pricePerMonth: 6500, pricePerTerm: 19500, capacity: 1, availableUnits: 10 },
         { type: 'SHARED' as const, pricePerMonth: 7000, pricePerTerm: 21000, capacity: 2, availableUnits: 15 },
@@ -260,7 +260,7 @@ async function main() {
       latitude: -0.0080, longitude: 34.5960, gender: 'FEMALE' as const,
       amenities: ['Wi-Fi', 'Kitchen', 'Study room', 'Security', 'Water'],
       verified: true, status: 'LIVE' as const, minutesToCampus: 8,
-      images: [{ url: '/room-single.jpg', isCover: true }, { url: '/room-3.jpg', isCover: false }],
+      images: [{ url: '/hostel-3.jpg', isCover: true }, { url: '/hostel-4.jpg', isCover: false }],
       rooms: [
         { type: 'SINGLE' as const, pricePerMonth: 6500, pricePerTerm: 19500, capacity: 1, availableUnits: 8 },
         { type: 'SHARED' as const, pricePerMonth: 7500, pricePerTerm: 22500, capacity: 2, availableUnits: 12 },
