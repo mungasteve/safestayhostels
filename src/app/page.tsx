@@ -5,22 +5,25 @@ import { prisma } from '@/lib/prisma'
 
 export const dynamic = 'force-dynamic'
 
-const CAMPUSES = [
-  'University of Nairobi',
-  'Kenyatta University',
-  'Strathmore University',
-  'USIU-Africa',
-  'Daystar University',
-  'Multimedia University of Kenya',
-  'Mount Kenya University',
-  'Kisii University',
-  'Maseno University',
+const CAMPUSES: { name: string; slug: string }[] = [
+  { name: 'Technical University of Kenya', slug: 'technical-university-of-kenya' },
+  { name: 'JKUAT', slug: 'jkuat' },
+  { name: 'Kenyatta University', slug: 'kenyatta-university' },
+  { name: 'University of Nairobi', slug: 'university-of-nairobi' },
+  { name: 'USIU-Africa', slug: 'usiu-africa' },
+  { name: 'Daystar University', slug: 'daystar-university' },
+  { name: 'Multimedia University of Kenya', slug: 'multimedia-university' },
+  { name: 'Mount Kenya University', slug: 'mount-kenya-university' },
+  { name: 'Kisii University', slug: 'kisii-university' },
+  { name: 'Maseno University', slug: 'maseno-university' },
 ]
 
 export default async function HomePage() {
   async function searchAction(formData: FormData) {
     'use server'
-    const q = formData.get('q') as string
+    const q = (formData.get('q') as string).trim()
+    const match = CAMPUSES.find(c => c.name.toLowerCase() === q.toLowerCase())
+    if (match) redirect(`/campus/${match.slug}`)
     redirect(`/hostels${q ? `?search=${encodeURIComponent(q)}` : ''}`)
   }
 
@@ -68,7 +71,7 @@ export default async function HomePage() {
                 className="w-full h-11 pl-10 pr-4 rounded-lg bg-white text-gray-900 text-sm placeholder:text-gray-400 border-0 outline-none"
               />
               <datalist id="campus-list">
-                {CAMPUSES.map(c => <option key={c} value={c} />)}
+                {CAMPUSES.map(c => <option key={c.slug} value={c.name} />)}
               </datalist>
             </div>
             <button
