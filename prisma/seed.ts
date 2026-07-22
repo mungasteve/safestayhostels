@@ -65,8 +65,8 @@ async function main() {
     },
     {
       id: 'hostel-7', ownerId: o4.id, campusId: 'campus-tuk',
-      name: 'SafeStay Ngong Road', address: 'Ngong Road, Nairobi',
-      description: 'Self-contained bedsitters and single rooms on Ngong Road, 6 minutes from TUK. Quiet neighbourhood, fibre internet.',
+      name: 'SafeStay South B', address: 'South B, Nairobi',
+      description: 'Self-contained bedsitters and single rooms in South B, 6 minutes from TUK. Quiet neighbourhood, fibre internet.',
       latitude: -1.2850, longitude: 36.8100, gender: 'MIXED' as const,
       amenities: ['Fibre Wi-Fi', 'Parking', 'Water', 'Security', 'CCTV'],
       verified: true, status: 'LIVE' as const, minutesToCampus: 6,
