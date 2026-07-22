@@ -50,7 +50,8 @@ export default async function CampusPage({ params }: { params: Promise<{ slug: s
   const male = campus.hostels.filter(h => h.gender === 'MALE' || h.gender === 'MIXED')
   const female = campus.hostels.filter(h => h.gender === 'FEMALE' || h.gender === 'MIXED')
 
-  function HostelGrid({ hostels }: { hostels: typeof campus.hostels }) {
+  type HostelItem = NonNullable<typeof campus>['hostels'][number]
+  function HostelGrid({ hostels }: { hostels: HostelItem[] }) {
     if (!hostels.length) return <p className="text-sm text-gray-400">No listings yet.</p>
     return (
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
