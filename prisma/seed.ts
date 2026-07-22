@@ -45,8 +45,8 @@ async function main() {
       images: [{ url: '/room-1.jpg', isCover: true }, { url: '/room-2.jpg', isCover: false }],
       rooms: [
         { type: 'SINGLE' as const, pricePerMonth: 6500, pricePerTerm: 19500, capacity: 1, availableUnits: 4 },
-        { type: 'SHARED' as const, pricePerMonth: 3500, pricePerTerm: 10500, capacity: 2, availableUnits: 6 },
-        { type: 'EN_SUITE' as const, pricePerMonth: 9500, pricePerTerm: 28500, capacity: 1, availableUnits: 2 },
+        { type: 'SHARED' as const, pricePerMonth: 7000, pricePerTerm: 21000, capacity: 2, availableUnits: 6 },
+        { type: 'EN_SUITE' as const, pricePerMonth: 9000, pricePerTerm: 27000, capacity: 1, availableUnits: 2 },
       ],
     },
     {
@@ -58,8 +58,8 @@ async function main() {
       verified: true, status: 'LIVE' as const, minutesToCampus: 8,
       images: [{ url: '/room-3.jpg', isCover: true }, { url: '/room-single.jpg', isCover: false }],
       rooms: [
-        { type: 'SINGLE' as const, pricePerMonth: 5500, pricePerTerm: 16500, capacity: 1, availableUnits: 5 },
-        { type: 'BEDSITTER' as const, pricePerMonth: 11000, pricePerTerm: 33000, capacity: 1, availableUnits: 1 },
+        { type: 'SINGLE' as const, pricePerMonth: 6500, pricePerTerm: 19500, capacity: 1, availableUnits: 5 },
+        { type: 'BEDSITTER' as const, pricePerMonth: 8500, pricePerTerm: 25500, capacity: 1, availableUnits: 1 },
       ],
     },
     {
@@ -71,7 +71,7 @@ async function main() {
       verified: true, status: 'LIVE' as const, minutesToCampus: 7,
       images: [{ url: '/room-ensuite.jpg', isCover: true }, { url: '/room-bedsitter.jpg', isCover: false }],
       rooms: [
-        { type: 'BEDSITTER' as const, pricePerMonth: 12000, pricePerTerm: 36000, capacity: 1, availableUnits: 3 },
+        { type: 'BEDSITTER' as const, pricePerMonth: 8000, pricePerTerm: 24000, capacity: 1, availableUnits: 3 },
         { type: 'SINGLE' as const, pricePerMonth: 7000, pricePerTerm: 21000, capacity: 1, availableUnits: 5 },
       ],
     },
@@ -85,9 +85,9 @@ async function main() {
       verified: true, status: 'LIVE' as const, minutesToCampus: 3,
       images: [{ url: '/room-shared.jpg', isCover: true }, { url: '/room-1.jpg', isCover: false }],
       rooms: [
-        { type: 'EN_SUITE' as const, pricePerMonth: 12000, pricePerTerm: 36000, capacity: 1, availableUnits: 3 },
+        { type: 'EN_SUITE' as const, pricePerMonth: 9000, pricePerTerm: 27000, capacity: 1, availableUnits: 3 },
         { type: 'SINGLE' as const, pricePerMonth: 7500, pricePerTerm: 22500, capacity: 1, availableUnits: 4 },
-        { type: 'SHARED' as const, pricePerMonth: 4000, pricePerTerm: 12000, capacity: 2, availableUnits: 8 },
+        { type: 'SHARED' as const, pricePerMonth: 6500, pricePerTerm: 19500, capacity: 2, availableUnits: 8 },
       ],
     },
     {
@@ -99,8 +99,8 @@ async function main() {
       verified: false, status: 'LIVE' as const, minutesToCampus: 12,
       images: [{ url: '/room-2.jpg', isCover: true }],
       rooms: [
-        { type: 'SHARED' as const, pricePerMonth: 2800, pricePerTerm: 8400, capacity: 3, availableUnits: 10 },
-        { type: 'SINGLE' as const, pricePerMonth: 4500, pricePerTerm: 13500, capacity: 1, availableUnits: 3 },
+        { type: 'SHARED' as const, pricePerMonth: 6500, pricePerTerm: 19500, capacity: 3, availableUnits: 10 },
+        { type: 'SINGLE' as const, pricePerMonth: 7500, pricePerTerm: 22500, capacity: 1, availableUnits: 3 },
       ],
     },
     {
@@ -112,8 +112,8 @@ async function main() {
       verified: true, status: 'LIVE' as const, minutesToCampus: 10,
       images: [{ url: '/room-3.jpg', isCover: true }, { url: '/room-single.jpg', isCover: false }],
       rooms: [
-        { type: 'SINGLE' as const, pricePerMonth: 5000, pricePerTerm: 15000, capacity: 1, availableUnits: 7 },
-        { type: 'SHARED' as const, pricePerMonth: 3000, pricePerTerm: 9000, capacity: 2, availableUnits: 6 },
+        { type: 'SINGLE' as const, pricePerMonth: 7000, pricePerTerm: 21000, capacity: 1, availableUnits: 7 },
+        { type: 'SHARED' as const, pricePerMonth: 6500, pricePerTerm: 19500, capacity: 2, availableUnits: 6 },
       ],
     },
     // Strathmore
@@ -126,8 +126,8 @@ async function main() {
       verified: true, status: 'LIVE' as const, minutesToCampus: 6,
       images: [{ url: '/room-ensuite.jpg', isCover: true }, { url: '/room-bedsitter.jpg', isCover: false }],
       rooms: [
-        { type: 'BEDSITTER' as const, pricePerMonth: 14000, pricePerTerm: 42000, capacity: 1, availableUnits: 2 },
-        { type: 'EN_SUITE' as const, pricePerMonth: 11000, pricePerTerm: 33000, capacity: 1, availableUnits: 3 },
+        { type: 'BEDSITTER' as const, pricePerMonth: 8500, pricePerTerm: 25500, capacity: 1, availableUnits: 2 },
+        { type: 'EN_SUITE' as const, pricePerMonth: 9000, pricePerTerm: 27000, capacity: 1, availableUnits: 3 },
       ],
     },
     {
@@ -139,8 +139,8 @@ async function main() {
       verified: true, status: 'LIVE' as const, minutesToCampus: 10,
       images: [{ url: '/room-1.jpg', isCover: true }],
       rooms: [
-        { type: 'SINGLE' as const, pricePerMonth: 5000, pricePerTerm: 15000, capacity: 1, availableUnits: 6 },
-        { type: 'SHARED' as const, pricePerMonth: 3000, pricePerTerm: 9000, capacity: 2, availableUnits: 8 },
+        { type: 'SINGLE' as const, pricePerMonth: 7000, pricePerTerm: 21000, capacity: 1, availableUnits: 6 },
+        { type: 'SHARED' as const, pricePerMonth: 6500, pricePerTerm: 19500, capacity: 2, availableUnits: 8 },
       ],
     },
     {
@@ -152,9 +152,9 @@ async function main() {
       verified: true, status: 'LIVE' as const, minutesToCampus: 9,
       images: [{ url: '/room-2.jpg', isCover: true }, { url: '/room-shared.jpg', isCover: false }],
       rooms: [
-        { type: 'SINGLE' as const, pricePerMonth: 6000, pricePerTerm: 18000, capacity: 1, availableUnits: 5 },
-        { type: 'EN_SUITE' as const, pricePerMonth: 10000, pricePerTerm: 30000, capacity: 1, availableUnits: 2 },
-        { type: 'SHARED' as const, pricePerMonth: 3500, pricePerTerm: 10500, capacity: 2, availableUnits: 4 },
+        { type: 'SINGLE' as const, pricePerMonth: 7000, pricePerTerm: 21000, capacity: 1, availableUnits: 5 },
+        { type: 'EN_SUITE' as const, pricePerMonth: 9000, pricePerTerm: 27000, capacity: 1, availableUnits: 2 },
+        { type: 'SHARED' as const, pricePerMonth: 6500, pricePerTerm: 19500, capacity: 2, availableUnits: 4 },
       ],
     },
     // MKU
@@ -167,8 +167,8 @@ async function main() {
       verified: true, status: 'LIVE' as const, minutesToCampus: 4,
       images: [{ url: '/room-3.jpg', isCover: true }, { url: '/room-1.jpg', isCover: false }],
       rooms: [
-        { type: 'SINGLE' as const, pricePerMonth: 4000, pricePerTerm: 12000, capacity: 1, availableUnits: 8 },
-        { type: 'SHARED' as const, pricePerMonth: 2500, pricePerTerm: 7500, capacity: 2, availableUnits: 10 },
+        { type: 'SINGLE' as const, pricePerMonth: 6500, pricePerTerm: 19500, capacity: 1, availableUnits: 8 },
+        { type: 'SHARED' as const, pricePerMonth: 7500, pricePerTerm: 22500, capacity: 2, availableUnits: 10 },
       ],
     },
     {
@@ -181,7 +181,7 @@ async function main() {
       images: [{ url: '/room-ensuite.jpg', isCover: true }, { url: '/room-bedsitter.jpg', isCover: false }],
       rooms: [
         { type: 'EN_SUITE' as const, pricePerMonth: 8500, pricePerTerm: 25500, capacity: 1, availableUnits: 4 },
-        { type: 'BEDSITTER' as const, pricePerMonth: 10000, pricePerTerm: 30000, capacity: 1, availableUnits: 2 },
+        { type: 'BEDSITTER' as const, pricePerMonth: 9000, pricePerTerm: 27000, capacity: 1, availableUnits: 2 },
       ],
     },
     // USIU
@@ -195,7 +195,7 @@ async function main() {
       images: [{ url: '/room-2.jpg', isCover: true }, { url: '/room-single.jpg', isCover: false }],
       rooms: [
         { type: 'SINGLE' as const, pricePerMonth: 7000, pricePerTerm: 21000, capacity: 1, availableUnits: 5 },
-        { type: 'EN_SUITE' as const, pricePerMonth: 11000, pricePerTerm: 33000, capacity: 1, availableUnits: 3 },
+        { type: 'EN_SUITE' as const, pricePerMonth: 9000, pricePerTerm: 27000, capacity: 1, availableUnits: 3 },
       ],
     },
     // Daystar
@@ -208,8 +208,8 @@ async function main() {
       verified: true, status: 'LIVE' as const, minutesToCampus: 7,
       images: [{ url: '/room-3.jpg', isCover: true }, { url: '/room-shared.jpg', isCover: false }],
       rooms: [
-        { type: 'SINGLE' as const, pricePerMonth: 5500, pricePerTerm: 16500, capacity: 1, availableUnits: 6 },
-        { type: 'SHARED' as const, pricePerMonth: 3200, pricePerTerm: 9600, capacity: 2, availableUnits: 8 },
+        { type: 'SINGLE' as const, pricePerMonth: 7000, pricePerTerm: 21000, capacity: 1, availableUnits: 6 },
+        { type: 'SHARED' as const, pricePerMonth: 6500, pricePerTerm: 19500, capacity: 2, availableUnits: 8 },
       ],
     },
     // Kisii
@@ -222,8 +222,8 @@ async function main() {
       verified: true, status: 'LIVE' as const, minutesToCampus: 6,
       images: [{ url: '/room-1.jpg', isCover: true }, { url: '/room-2.jpg', isCover: false }],
       rooms: [
-        { type: 'SINGLE' as const, pricePerMonth: 3500, pricePerTerm: 10500, capacity: 1, availableUnits: 8 },
-        { type: 'SHARED' as const, pricePerMonth: 2000, pricePerTerm: 6000, capacity: 2, availableUnits: 12 },
+        { type: 'SINGLE' as const, pricePerMonth: 7000, pricePerTerm: 21000, capacity: 1, availableUnits: 8 },
+        { type: 'SHARED' as const, pricePerMonth: 6500, pricePerTerm: 19500, capacity: 2, availableUnits: 12 },
       ],
     },
     {
@@ -235,8 +235,8 @@ async function main() {
       verified: false, status: 'LIVE' as const, minutesToCampus: 9,
       images: [{ url: '/room-3.jpg', isCover: true }],
       rooms: [
-        { type: 'SINGLE' as const, pricePerMonth: 3000, pricePerTerm: 9000, capacity: 1, availableUnits: 10 },
-        { type: 'SHARED' as const, pricePerMonth: 1800, pricePerTerm: 5400, capacity: 2, availableUnits: 14 },
+        { type: 'SINGLE' as const, pricePerMonth: 6500, pricePerTerm: 19500, capacity: 1, availableUnits: 10 },
+        { type: 'SHARED' as const, pricePerMonth: 7500, pricePerTerm: 22500, capacity: 2, availableUnits: 14 },
       ],
     },
     // Maseno
@@ -249,8 +249,8 @@ async function main() {
       verified: true, status: 'LIVE' as const, minutesToCampus: 4,
       images: [{ url: '/room-2.jpg', isCover: true }, { url: '/room-1.jpg', isCover: false }],
       rooms: [
-        { type: 'SINGLE' as const, pricePerMonth: 3000, pricePerTerm: 9000, capacity: 1, availableUnits: 10 },
-        { type: 'SHARED' as const, pricePerMonth: 1800, pricePerTerm: 5400, capacity: 2, availableUnits: 15 },
+        { type: 'SINGLE' as const, pricePerMonth: 6500, pricePerTerm: 19500, capacity: 1, availableUnits: 10 },
+        { type: 'SHARED' as const, pricePerMonth: 7000, pricePerTerm: 21000, capacity: 2, availableUnits: 15 },
       ],
     },
     {
@@ -262,8 +262,8 @@ async function main() {
       verified: true, status: 'LIVE' as const, minutesToCampus: 8,
       images: [{ url: '/room-single.jpg', isCover: true }, { url: '/room-3.jpg', isCover: false }],
       rooms: [
-        { type: 'SINGLE' as const, pricePerMonth: 2800, pricePerTerm: 8400, capacity: 1, availableUnits: 8 },
-        { type: 'SHARED' as const, pricePerMonth: 1600, pricePerTerm: 4800, capacity: 2, availableUnits: 12 },
+        { type: 'SINGLE' as const, pricePerMonth: 6500, pricePerTerm: 19500, capacity: 1, availableUnits: 8 },
+        { type: 'SHARED' as const, pricePerMonth: 7500, pricePerTerm: 22500, capacity: 2, availableUnits: 12 },
       ],
     },
   ]
